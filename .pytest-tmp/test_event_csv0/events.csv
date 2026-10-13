@@ -1,0 +1,2 @@
+timestamp_utc,device_id,image_filename,anomaly_score,decision,latency_ms,alert
+2026-10-12T19:27:30.502785+00:00,INSPECTOR-01,cable.png,0.7,REVIEW REQUIRED,12.3,True

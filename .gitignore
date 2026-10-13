@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.venv/
+data/mvtec_anomaly_detection/
+artifacts/*.npy
+artifacts/*.json
+artifacts/*.csv
+reports/*.json
+reports/*.png
