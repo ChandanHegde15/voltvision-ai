@@ -1,0 +1,1 @@
+{"architecture": "wrong", "weights": "ResNet18_Weights.IMAGENET1K_V1", "image_size": 224, "feature_layer": "layer3", "metric": "euclidean", "threshold": 0.5}
