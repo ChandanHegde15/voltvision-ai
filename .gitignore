@@ -7,3 +7,5 @@ artifacts/*.json
 artifacts/*.csv
 reports/*.json
 reports/*.png
+.pytest-tmp/
+reports/experiments/*.log
