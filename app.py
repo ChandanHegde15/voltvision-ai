@@ -3,7 +3,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import streamlit as st
 
-from config import EVENTS_PATH
+from config import DATA_DIR, EVENTS_PATH
 from src.anomaly_detector import PatchAnomalyDetector
 from src.artifacts import load_reference_artifacts
 from src.edge_simulator import append_event, load_events
@@ -45,12 +45,12 @@ with tab_inspect:
                     extractor, detector, metadata = load_engine()
                     started = time.perf_counter(); patches, _ = extractor.extract(upload); result = detector.score(patches); latency = (time.perf_counter() - started) * 1000
                     append_event(EVENTS_PATH, "LINE-01", upload.name, result.score, result.decision, latency)
-                    st.session_state["inspection"] = (result, metadata, latency, detector.reference_paths)
+                    st.session_state["inspection"] = (result, metadata, latency)
                 except Exception as exc:
                     st.error(f"Inspection is not ready: {exc}")
     inspection = st.session_state.get("inspection")
     if inspection:
-        result, metadata, latency, reference_paths = inspection
+        result, metadata, latency = inspection
         if result.decision == "NORMAL": st.markdown('<p class="status-ok">✓ Normal appearance</p>', unsafe_allow_html=True)
         else: st.markdown('<p class="status-alert">● Review required</p>', unsafe_allow_html=True)
         score, cutoff, speed = st.columns(3)
@@ -62,7 +62,8 @@ with tab_inspect:
             st.pyplot(fig, use_container_width=True)
         with reference:
             st.write("Closest known-normal example")
-            if result.closest_index < len(reference_paths) and Path(reference_paths[result.closest_index]).is_file(): st.image(reference_paths[result.closest_index], use_container_width=True)
+            reference_path = DATA_DIR / result.closest_reference
+            if reference_path.is_file(): st.image(reference_path, use_container_width=True)
             else: st.caption("A saved normal reference image is not available.")
 
 with tab_history:

@@ -1,0 +1,94 @@
+{
+  "created_at_utc": "2026-11-09T17:21:26.705692+00:00",
+  "protocol": "pre-registered exploratory comparison; test labels are used only for final reporting",
+  "test_images": 150,
+  "normal_train_images": 224,
+  "baseline_split_seed": 42,
+  "latency_scope": "nearest-neighbor scoring only; feature extraction is precomputed and excluded",
+  "experiment_id": "exp_02_score_aggregation",
+  "changed_variable": "image score aggregation percentile",
+  "reference_artifact_format_version": 2,
+  "runs": [
+    {
+      "patch_score_percentile": 90.0,
+      "threshold": 0.5708431994915009,
+      "evaluated_images": 150,
+      "precision": 0.987012987012987,
+      "recall": 0.8260869565217391,
+      "f1": 0.8994082840236687,
+      "confusion_matrix": [
+        [
+          57,
+          1
+        ],
+        [
+          16,
+          76
+        ]
+      ],
+      "average_latency_ms": 35.206115332742534,
+      "roc_auc": 0.9820089955022488,
+      "true_negatives": 57,
+      "false_positives": 1,
+      "false_negatives": 16,
+      "true_positives": 76,
+      "false_positive_rate": 0.017241379310344827,
+      "false_negative_rate": 0.17391304347826086,
+      "median_latency_ms": 34.12759999628179
+    },
+    {
+      "patch_score_percentile": 95.0,
+      "threshold": 0.6180034255981446,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.8260869565217391,
+      "f1": 0.9047619047619048,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          16,
+          76
+        ]
+      ],
+      "average_latency_ms": 34.4289406647052,
+      "roc_auc": 0.9936281859070465,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 16,
+      "true_positives": 76,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.17391304347826086,
+      "median_latency_ms": 34.46490000351332
+    },
+    {
+      "patch_score_percentile": 99.0,
+      "threshold": 0.6946630647182467,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.7934782608695652,
+      "f1": 0.8848484848484849,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          19,
+          73
+        ]
+      ],
+      "average_latency_ms": 35.34646733217718,
+      "roc_auc": 0.997751124437781,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 19,
+      "true_positives": 73,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.20652173913043478,
+      "median_latency_ms": 34.308250003959984
+    }
+  ]
+}

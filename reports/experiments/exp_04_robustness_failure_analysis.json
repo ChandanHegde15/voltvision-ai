@@ -1,0 +1,463 @@
+{
+  "experiment_id": "exp_04_robustness_failure_analysis",
+  "created_at_utc": "2026-11-09T17:37:10.245381+00:00",
+  "changed_variable": "input quality condition",
+  "baseline_threshold": 0.6180034255981446,
+  "runs": [
+    {
+      "condition": "identity",
+      "threshold_recalibrated": false,
+      "evaluated_images": 150,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.8260869565217391,
+      "f1": 0.9047619047619048,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          16,
+          76
+        ]
+      ],
+      "average_latency_ms": 42.21927000132079,
+      "roc_auc": 0.9936281859070465,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 16,
+      "true_positives": 76,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.17391304347826086,
+      "median_latency_ms": 40.17999999632593
+    },
+    {
+      "condition": "blur_0_5",
+      "threshold_recalibrated": false,
+      "evaluated_images": 150,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.8260869565217391,
+      "f1": 0.9047619047619048,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          16,
+          76
+        ]
+      ],
+      "average_latency_ms": 81.73368800004634,
+      "roc_auc": 0.9932533733133433,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 16,
+      "true_positives": 76,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.17391304347826086,
+      "median_latency_ms": 88.52729998761788
+    },
+    {
+      "condition": "blur_1_0",
+      "threshold_recalibrated": false,
+      "evaluated_images": 150,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.8152173913043478,
+      "f1": 0.8982035928143712,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          17,
+          75
+        ]
+      ],
+      "average_latency_ms": 57.566455999040045,
+      "roc_auc": 0.9934407796101948,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 17,
+      "true_positives": 75,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.18478260869565216,
+      "median_latency_ms": 37.2100000095088
+    },
+    {
+      "condition": "brightness_0_8",
+      "threshold_recalibrated": false,
+      "evaluated_images": 150,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.8152173913043478,
+      "f1": 0.8982035928143712,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          17,
+          75
+        ]
+      ],
+      "average_latency_ms": 48.91046400026729,
+      "roc_auc": 0.9908170914542729,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 17,
+      "true_positives": 75,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.18478260869565216,
+      "median_latency_ms": 33.61369999765884
+    },
+    {
+      "condition": "brightness_1_2",
+      "threshold_recalibrated": false,
+      "evaluated_images": 150,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.8586956521739131,
+      "f1": 0.9239766081871345,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          13,
+          79
+        ]
+      ],
+      "average_latency_ms": 55.37647666681247,
+      "roc_auc": 0.9913793103448275,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 13,
+      "true_positives": 79,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.14130434782608695,
+      "median_latency_ms": 37.36660000868142
+    }
+  ],
+  "per_category_original": {
+    "bent_wire": {
+      "evaluated_images": 13,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          13
+        ]
+      ],
+      "average_latency_ms": 40.542469232325224,
+      "roc_auc": null,
+      "true_negatives": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 13,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.0,
+      "median_latency_ms": 39.4596999976784
+    },
+    "cable_swap": {
+      "evaluated_images": 12,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.5833333333333334,
+      "f1": 0.7368421052631579,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "average_latency_ms": 39.69480833620764,
+      "roc_auc": null,
+      "true_negatives": 0,
+      "false_positives": 0,
+      "false_negatives": 5,
+      "true_positives": 7,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.4166666666666667,
+      "median_latency_ms": 38.81334999459796
+    },
+    "combined": {
+      "evaluated_images": 11,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          11
+        ]
+      ],
+      "average_latency_ms": 44.6929636421952,
+      "roc_auc": null,
+      "true_negatives": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 11,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.0,
+      "median_latency_ms": 44.539199996506795
+    },
+    "cut_inner_insulation": {
+      "evaluated_images": 14,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          14
+        ]
+      ],
+      "average_latency_ms": 45.9317214242349,
+      "roc_auc": null,
+      "true_negatives": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 14,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.0,
+      "median_latency_ms": 43.893899986869656
+    },
+    "cut_outer_insulation": {
+      "evaluated_images": 10,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235294117647058,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          7
+        ]
+      ],
+      "average_latency_ms": 42.6921999984188,
+      "roc_auc": null,
+      "true_negatives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "true_positives": 7,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.3,
+      "median_latency_ms": 40.83714999433141
+    },
+    "good": {
+      "images": 58,
+      "normal_acceptance_rate": 1.0,
+      "false_positive_rate": 0.0,
+      "note": "Anomaly recall is undefined because this group contains no positive/anomalous labels."
+    },
+    "missing_cable": {
+      "evaluated_images": 12,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "average_latency_ms": 41.589325005285595,
+      "roc_auc": null,
+      "true_negatives": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 12,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.0,
+      "median_latency_ms": 40.70165001030546
+    },
+    "missing_wire": {
+      "evaluated_images": 10,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "average_latency_ms": 39.94595999538433,
+      "roc_auc": null,
+      "true_negatives": 0,
+      "false_positives": 0,
+      "false_negatives": 5,
+      "true_positives": 5,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.5,
+      "median_latency_ms": 39.373599996906705
+    },
+    "poke_insulation": {
+      "evaluated_images": 10,
+      "threshold": 0.6180034255981446,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235294117647058,
+      "confusion_matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          7
+        ]
+      ],
+      "average_latency_ms": 37.586459997692145,
+      "roc_auc": null,
+      "true_negatives": 0,
+      "false_positives": 0,
+      "false_negatives": 3,
+      "true_positives": 7,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.3,
+      "median_latency_ms": 36.52264998527244
+    }
+  },
+  "false_negatives_original": [
+    {
+      "image_id": "test/cable_swap/000.png",
+      "category": "cable_swap",
+      "score": 0.6036633253097534,
+      "margin_to_threshold": 0.014340100288391167
+    },
+    {
+      "image_id": "test/cable_swap/003.png",
+      "category": "cable_swap",
+      "score": 0.6099351048469543,
+      "margin_to_threshold": 0.008068320751190239
+    },
+    {
+      "image_id": "test/cable_swap/004.png",
+      "category": "cable_swap",
+      "score": 0.5944797992706299,
+      "margin_to_threshold": 0.0235236263275147
+    },
+    {
+      "image_id": "test/cable_swap/009.png",
+      "category": "cable_swap",
+      "score": 0.613451212644577,
+      "margin_to_threshold": 0.004552212953567558
+    },
+    {
+      "image_id": "test/cable_swap/011.png",
+      "category": "cable_swap",
+      "score": 0.6086139678955078,
+      "margin_to_threshold": 0.009389457702636772
+    },
+    {
+      "image_id": "test/cut_outer_insulation/003.png",
+      "category": "cut_outer_insulation",
+      "score": 0.6061088591814041,
+      "margin_to_threshold": 0.01189456641674047
+    },
+    {
+      "image_id": "test/cut_outer_insulation/004.png",
+      "category": "cut_outer_insulation",
+      "score": 0.6120537221431732,
+      "margin_to_threshold": 0.005949703454971367
+    },
+    {
+      "image_id": "test/cut_outer_insulation/005.png",
+      "category": "cut_outer_insulation",
+      "score": 0.6047424226999283,
+      "margin_to_threshold": 0.0132610028982163
+    },
+    {
+      "image_id": "test/missing_wire/000.png",
+      "category": "missing_wire",
+      "score": 0.5717020779848099,
+      "margin_to_threshold": 0.04630134761333471
+    },
+    {
+      "image_id": "test/missing_wire/001.png",
+      "category": "missing_wire",
+      "score": 0.5904599279165268,
+      "margin_to_threshold": 0.02754349768161779
+    },
+    {
+      "image_id": "test/missing_wire/002.png",
+      "category": "missing_wire",
+      "score": 0.5970494598150253,
+      "margin_to_threshold": 0.020953965783119255
+    },
+    {
+      "image_id": "test/missing_wire/007.png",
+      "category": "missing_wire",
+      "score": 0.578845739364624,
+      "margin_to_threshold": 0.03915768623352056
+    },
+    {
+      "image_id": "test/missing_wire/009.png",
+      "category": "missing_wire",
+      "score": 0.5978258550167084,
+      "margin_to_threshold": 0.02017757058143621
+    },
+    {
+      "image_id": "test/poke_insulation/000.png",
+      "category": "poke_insulation",
+      "score": 0.5784052461385727,
+      "margin_to_threshold": 0.03959817945957189
+    },
+    {
+      "image_id": "test/poke_insulation/002.png",
+      "category": "poke_insulation",
+      "score": 0.5708882659673691,
+      "margin_to_threshold": 0.047115159630775505
+    },
+    {
+      "image_id": "test/poke_insulation/003.png",
+      "category": "poke_insulation",
+      "score": 0.617720291018486,
+      "margin_to_threshold": 0.0002831345796585616
+    }
+  ],
+  "limitations": "Synthetic conditions are not a substitute for real production camera and lighting variation."
+}

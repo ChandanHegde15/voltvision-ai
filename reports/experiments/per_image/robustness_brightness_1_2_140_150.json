@@ -1,0 +1,76 @@
+{
+  "condition": "brightness_1_2",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/poke_insulation/000.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.5853088051080704,
+      "latency_ms": 170.5980999977328
+    },
+    {
+      "image_id": "test/poke_insulation/001.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6931930035352707,
+      "latency_ms": 32.37940001417883
+    },
+    {
+      "image_id": "test/poke_insulation/002.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.5957684069871902,
+      "latency_ms": 36.360800004331395
+    },
+    {
+      "image_id": "test/poke_insulation/003.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6256152987480164,
+      "latency_ms": 35.09359998861328
+    },
+    {
+      "image_id": "test/poke_insulation/004.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.624476745724678,
+      "latency_ms": 32.33779998845421
+    },
+    {
+      "image_id": "test/poke_insulation/005.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6694470643997192,
+      "latency_ms": 33.35079998942092
+    },
+    {
+      "image_id": "test/poke_insulation/006.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6305073201656342,
+      "latency_ms": 34.191599988844246
+    },
+    {
+      "image_id": "test/poke_insulation/007.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6641349643468857,
+      "latency_ms": 32.056800002465025
+    },
+    {
+      "image_id": "test/poke_insulation/008.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6977938860654831,
+      "latency_ms": 31.83799999533221
+    },
+    {
+      "image_id": "test/poke_insulation/009.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6210394650697708,
+      "latency_ms": 34.29319997667335
+    }
+  ]
+}

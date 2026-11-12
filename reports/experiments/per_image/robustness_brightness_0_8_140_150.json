@@ -1,0 +1,76 @@
+{
+  "condition": "brightness_0_8",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/poke_insulation/000.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.578604519367218,
+      "latency_ms": 158.72410000883974
+    },
+    {
+      "image_id": "test/poke_insulation/001.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.691124901175499,
+      "latency_ms": 32.97739999834448
+    },
+    {
+      "image_id": "test/poke_insulation/002.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.5704437494277954,
+      "latency_ms": 32.47970002121292
+    },
+    {
+      "image_id": "test/poke_insulation/003.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.612491562962532,
+      "latency_ms": 30.87499999674037
+    },
+    {
+      "image_id": "test/poke_insulation/004.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6148745864629745,
+      "latency_ms": 33.03500000038184
+    },
+    {
+      "image_id": "test/poke_insulation/005.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6689775586128235,
+      "latency_ms": 30.767700023716316
+    },
+    {
+      "image_id": "test/poke_insulation/006.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.65373595058918,
+      "latency_ms": 33.00130000570789
+    },
+    {
+      "image_id": "test/poke_insulation/007.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6498556435108185,
+      "latency_ms": 35.30199997476302
+    },
+    {
+      "image_id": "test/poke_insulation/008.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6788552403450012,
+      "latency_ms": 34.15849999873899
+    },
+    {
+      "image_id": "test/poke_insulation/009.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6312909424304962,
+      "latency_ms": 31.12260001944378
+    }
+  ]
+}

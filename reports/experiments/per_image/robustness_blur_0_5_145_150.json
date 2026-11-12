@@ -1,0 +1,41 @@
+{
+  "condition": "blur_0_5",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/poke_insulation/005.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6610988676548004,
+      "latency_ms": 227.23889999906532
+    },
+    {
+      "image_id": "test/poke_insulation/006.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6389000415802002,
+      "latency_ms": 85.5052999977488
+    },
+    {
+      "image_id": "test/poke_insulation/007.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6448738127946854,
+      "latency_ms": 84.87510000122711
+    },
+    {
+      "image_id": "test/poke_insulation/008.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6864841431379318,
+      "latency_ms": 84.29170001181774
+    },
+    {
+      "image_id": "test/poke_insulation/009.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6330676376819611,
+      "latency_ms": 84.49719997588545
+    }
+  ]
+}

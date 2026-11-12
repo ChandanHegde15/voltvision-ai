@@ -1,0 +1,130 @@
+{
+  "created_at_utc": "2026-11-09T17:21:26.705692+00:00",
+  "protocol": "pre-registered exploratory comparison; test labels are used only for final reporting",
+  "test_images": 150,
+  "normal_train_images": 224,
+  "baseline_split_seed": 42,
+  "latency_scope": "nearest-neighbor scoring only; feature extraction is precomputed and excluded",
+  "experiment_id": "exp_01_reference_bank_size",
+  "changed_variable": "reference patch cap",
+  "reference_split_hash": "cc37c142abfee20e3409a203a03cc9fc5387dc9bb08ae00b7567bcac7e19cf88",
+  "validation_split_hash": "eb937bc9ae44187dfc70d0bd99fe07b2563ad1a30685c986ae6302b994f73bcf",
+  "runs": [
+    {
+      "patch_cap": 5000,
+      "sampling_seed": 2027,
+      "threshold": 0.6709196317195892,
+      "reference_bank_bytes": 5120000,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.7608695652173914,
+      "f1": 0.8641975308641975,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          22,
+          70
+        ]
+      ],
+      "average_latency_ms": 9.651881332392804,
+      "roc_auc": 0.9895052473763118,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 22,
+      "true_positives": 70,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.2391304347826087,
+      "median_latency_ms": 8.801100004347973
+    },
+    {
+      "patch_cap": 10000,
+      "sampling_seed": 2027,
+      "threshold": 0.6377304518222809,
+      "reference_bank_bytes": 10240000,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.8804347826086957,
+      "f1": 0.9364161849710982,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          11,
+          81
+        ]
+      ],
+      "average_latency_ms": 14.484675999653215,
+      "roc_auc": 0.9895052473763118,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 11,
+      "true_positives": 81,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.11956521739130435,
+      "median_latency_ms": 14.35979999951087
+    },
+    {
+      "patch_cap": 20000,
+      "sampling_seed": 2027,
+      "threshold": 0.6225135606527329,
+      "reference_bank_bytes": 20480000,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.8586956521739131,
+      "f1": 0.9239766081871345,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          13,
+          79
+        ]
+      ],
+      "average_latency_ms": 27.115566000187147,
+      "roc_auc": 0.9887556221889056,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 13,
+      "true_positives": 79,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.14130434782608695,
+      "median_latency_ms": 26.527799986070022
+    },
+    {
+      "patch_cap": 30000,
+      "sampling_seed": 2027,
+      "threshold": 0.6033053612709045,
+      "reference_bank_bytes": 30720000,
+      "evaluated_images": 150,
+      "precision": 0.9879518072289156,
+      "recall": 0.8913043478260869,
+      "f1": 0.9371428571428572,
+      "confusion_matrix": [
+        [
+          57,
+          1
+        ],
+        [
+          10,
+          82
+        ]
+      ],
+      "average_latency_ms": 37.414433999996014,
+      "roc_auc": 0.9923163418290855,
+      "true_negatives": 57,
+      "false_positives": 1,
+      "false_negatives": 10,
+      "true_positives": 82,
+      "false_positive_rate": 0.017241379310344827,
+      "false_negative_rate": 0.10869565217391304,
+      "median_latency_ms": 37.06989999045618
+    }
+  ]
+}

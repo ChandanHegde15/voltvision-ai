@@ -1,0 +1,76 @@
+{
+  "condition": "blur_0_5",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/good/045.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5338416546583176,
+      "latency_ms": 176.63139998330735
+    },
+    {
+      "image_id": "test/good/046.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5287760347127914,
+      "latency_ms": 87.60200001415797
+    },
+    {
+      "image_id": "test/good/047.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5537151545286179,
+      "latency_ms": 87.3901000013575
+    },
+    {
+      "image_id": "test/good/048.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5297335088253021,
+      "latency_ms": 103.80079998867586
+    },
+    {
+      "image_id": "test/good/049.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5578122138977051,
+      "latency_ms": 91.5128999913577
+    },
+    {
+      "image_id": "test/good/050.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5397664457559586,
+      "latency_ms": 93.69229999720119
+    },
+    {
+      "image_id": "test/good/051.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5941101610660553,
+      "latency_ms": 117.81679998966865
+    },
+    {
+      "image_id": "test/good/052.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5379650741815567,
+      "latency_ms": 107.05749999033287
+    },
+    {
+      "image_id": "test/good/053.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5120202749967575,
+      "latency_ms": 96.45469998940825
+    },
+    {
+      "image_id": "test/good/054.png",
+      "category": "good",
+      "label": 0,
+      "score": 0.5486617535352707,
+      "latency_ms": 91.75459999823943
+    }
+  ]
+}

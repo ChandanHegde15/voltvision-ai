@@ -1,0 +1,390 @@
+{
+  "created_at_utc": "2026-11-09T17:21:26.705692+00:00",
+  "protocol": "pre-registered exploratory comparison; test labels are used only for final reporting",
+  "test_images": 150,
+  "normal_train_images": 224,
+  "baseline_split_seed": 42,
+  "latency_scope": "nearest-neighbor scoring only; feature extraction is precomputed and excluded",
+  "experiment_id": "exp_03_split_stability",
+  "changed_variable": "deterministic normal train/validation split seed",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "runs": [
+    {
+      "seed": 0,
+      "reference_split_hash": "b570d4f208d820b4a2f85fab3a6a3d1e1650329f04717e6921bc2a2868ce3060",
+      "validation_split_hash": "1975641e9bac5d15238942b86e7d17050b54f182c8cbf9d70fd3ab6a388d51e6",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.6152841436862946,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.8369565217391305,
+      "f1": 0.9112426035502958,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          15,
+          77
+        ]
+      ],
+      "average_latency_ms": 39.13403666714051,
+      "roc_auc": 0.9917541229385307,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 15,
+      "true_positives": 77,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.16304347826086957,
+      "median_latency_ms": 36.03819999261759
+    },
+    {
+      "seed": 1,
+      "reference_split_hash": "0cc49eae4c10b4d949f87b5df1166d2637e4d3cc5226f946184e13dab75c9940",
+      "validation_split_hash": "244c3a7e09fd4cfbc3a10d396ade4479444ce5f950d8bbd2d3a4bf3b71db9ce4",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.6000392717123032,
+      "evaluated_images": 150,
+      "precision": 0.9880952380952381,
+      "recall": 0.9021739130434783,
+      "f1": 0.9431818181818182,
+      "confusion_matrix": [
+        [
+          57,
+          1
+        ],
+        [
+          9,
+          83
+        ]
+      ],
+      "average_latency_ms": 42.02218000214392,
+      "roc_auc": 0.9921289355322338,
+      "true_negatives": 57,
+      "false_positives": 1,
+      "false_negatives": 9,
+      "true_positives": 83,
+      "false_positive_rate": 0.017241379310344827,
+      "false_negative_rate": 0.09782608695652174,
+      "median_latency_ms": 38.80829999980051
+    },
+    {
+      "seed": 2,
+      "reference_split_hash": "9d950b4228faafba1e965ef05b95fe6fad40a932754a9738d625a882a9120e17",
+      "validation_split_hash": "79330456e4c72ca3efcb3f5512f3709a4643c6df3b027a4c3cf9ff664820280c",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.5920298278331757,
+      "evaluated_images": 150,
+      "precision": 0.9666666666666667,
+      "recall": 0.9456521739130435,
+      "f1": 0.9560439560439561,
+      "confusion_matrix": [
+        [
+          55,
+          3
+        ],
+        [
+          5,
+          87
+        ]
+      ],
+      "average_latency_ms": 36.614449333865196,
+      "roc_auc": 0.9923163418290855,
+      "true_negatives": 55,
+      "false_positives": 3,
+      "false_negatives": 5,
+      "true_positives": 87,
+      "false_positive_rate": 0.05172413793103448,
+      "false_negative_rate": 0.05434782608695652,
+      "median_latency_ms": 35.172500007320195
+    },
+    {
+      "seed": 3,
+      "reference_split_hash": "b9f4bec8010e8a76c627a9ef71a4284e98b83bac186731dfae0a34aa3b5f30df",
+      "validation_split_hash": "0826f9d1b33c9d59d1cde1d49db51ee66fcc437a12a703b3546cf3cceca2804c",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.6105428141355514,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.8913043478260869,
+      "f1": 0.9425287356321839,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          10,
+          82
+        ]
+      ],
+      "average_latency_ms": 35.75246866656622,
+      "roc_auc": 0.993815592203898,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 10,
+      "true_positives": 82,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.10869565217391304,
+      "median_latency_ms": 35.11079998861533
+    },
+    {
+      "seed": 4,
+      "reference_split_hash": "4f26cc1617a28b2700b138f20bb41d92cf7a63300900c29d424e9f3f2920b435",
+      "validation_split_hash": "047bcc48ba3ce3adc25770f55d4801c6c09e53068f9f6e667e74b01c4c66c8d2",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.6084714126586914,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.8586956521739131,
+      "f1": 0.9239766081871345,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          13,
+          79
+        ]
+      ],
+      "average_latency_ms": 36.110144665581174,
+      "roc_auc": 0.9921289355322338,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 13,
+      "true_positives": 79,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.14130434782608695,
+      "median_latency_ms": 35.4063499980839
+    },
+    {
+      "seed": 5,
+      "reference_split_hash": "cf00d83a79f8e6eb7aaa5978b83809d74a70bb153bf2f0b043b5137338816daf",
+      "validation_split_hash": "e5b48ae45a53830f7b1261256544a6c19780ddeba2ae6dc9106ace6e274a643b",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.5971467071771622,
+      "evaluated_images": 150,
+      "precision": 0.9770114942528736,
+      "recall": 0.9239130434782609,
+      "f1": 0.9497206703910615,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          7,
+          85
+        ]
+      ],
+      "average_latency_ms": 35.930995998787694,
+      "roc_auc": 0.992503748125937,
+      "true_negatives": 56,
+      "false_positives": 2,
+      "false_negatives": 7,
+      "true_positives": 85,
+      "false_positive_rate": 0.034482758620689655,
+      "false_negative_rate": 0.07608695652173914,
+      "median_latency_ms": 35.696299994015135
+    },
+    {
+      "seed": 6,
+      "reference_split_hash": "1ee1eea9f89578a2a4939045e134401fdf028ab19aae853f77652a0fd30f06e5",
+      "validation_split_hash": "1e482952b363a063316d3777ba6c1c02c7cba7dfa1b6e8166adf9b1030bc031b",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.6070437562465668,
+      "evaluated_images": 150,
+      "precision": 1.0,
+      "recall": 0.8804347826086957,
+      "f1": 0.9364161849710982,
+      "confusion_matrix": [
+        [
+          58,
+          0
+        ],
+        [
+          11,
+          81
+        ]
+      ],
+      "average_latency_ms": 36.10208933183458,
+      "roc_auc": 0.9941904047976011,
+      "true_negatives": 58,
+      "false_positives": 0,
+      "false_negatives": 11,
+      "true_positives": 81,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.11956521739130435,
+      "median_latency_ms": 35.84160000900738
+    },
+    {
+      "seed": 7,
+      "reference_split_hash": "814ef32618c27cfcedc2c1692b331519fb2168322b230bd18c95332551225c4b",
+      "validation_split_hash": "01948e105283a766fb88dda50461d04f308308770c89dda96364d2b8516153a6",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.6065621733665467,
+      "evaluated_images": 150,
+      "precision": 0.9879518072289156,
+      "recall": 0.8913043478260869,
+      "f1": 0.9371428571428572,
+      "confusion_matrix": [
+        [
+          57,
+          1
+        ],
+        [
+          10,
+          82
+        ]
+      ],
+      "average_latency_ms": 36.70808799817072,
+      "roc_auc": 0.9936281859070465,
+      "true_negatives": 57,
+      "false_positives": 1,
+      "false_negatives": 10,
+      "true_positives": 82,
+      "false_positive_rate": 0.017241379310344827,
+      "false_negative_rate": 0.10869565217391304,
+      "median_latency_ms": 35.504349987604655
+    },
+    {
+      "seed": 8,
+      "reference_split_hash": "2d1714f90b3597e8dfd6bd638c296e228a635a0ede0859f565117c20ebb3643c",
+      "validation_split_hash": "c9bbec15fc9bc0855d2417f601fe37e7b2cafa4c6732c6c1239feedeb92869b3",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.598328600525856,
+      "evaluated_images": 150,
+      "precision": 0.9772727272727273,
+      "recall": 0.9347826086956522,
+      "f1": 0.9555555555555556,
+      "confusion_matrix": [
+        [
+          56,
+          2
+        ],
+        [
+          6,
+          86
+        ]
+      ],
+      "average_latency_ms": 38.99816666613333,
+      "roc_auc": 0.9928785607196402,
+      "true_negatives": 56,
+      "false_positives": 2,
+      "false_negatives": 6,
+      "true_positives": 86,
+      "false_positive_rate": 0.034482758620689655,
+      "false_negative_rate": 0.06521739130434782,
+      "median_latency_ms": 37.567649997072294
+    },
+    {
+      "seed": 9,
+      "reference_split_hash": "47c74d8a41220354078c6af17d139304301829a88ef469fc53ff48a95c3f259f",
+      "validation_split_hash": "76575c79c7d5198c425e46c7df03f66e8341006862f002273bbec36eef927b44",
+      "reference_images": 179,
+      "validation_images": 45,
+      "threshold": 0.6052107697725296,
+      "evaluated_images": 150,
+      "precision": 0.9878048780487805,
+      "recall": 0.8804347826086957,
+      "f1": 0.9310344827586207,
+      "confusion_matrix": [
+        [
+          57,
+          1
+        ],
+        [
+          11,
+          81
+        ]
+      ],
+      "average_latency_ms": 41.03417333351293,
+      "roc_auc": 0.9883808095952025,
+      "true_negatives": 57,
+      "false_positives": 1,
+      "false_negatives": 11,
+      "true_positives": 81,
+      "false_positive_rate": 0.017241379310344827,
+      "false_negative_rate": 0.11956521739130435,
+      "median_latency_ms": 39.17060000821948
+    }
+  ],
+  "aggregate": {
+    "threshold": {
+      "mean": 0.6040659477114677,
+      "std": 0.006674505887159181,
+      "min": 0.5920298278331757,
+      "max": 0.6152841436862946
+    },
+    "precision": {
+      "mean": 0.9884802811565201,
+      "std": 0.011245779276474188,
+      "min": 0.9666666666666667,
+      "max": 1.0
+    },
+    "recall": {
+      "mean": 0.8945652173913043,
+      "std": 0.031894349458959144,
+      "min": 0.8369565217391305,
+      "max": 0.9456521739130435
+    },
+    "f1": {
+      "mean": 0.9386843472414581,
+      "std": 0.013334949368820665,
+      "min": 0.9112426035502958,
+      "max": 0.9560439560439561
+    },
+    "roc_auc": {
+      "mean": 0.9923725637181409,
+      "std": 0.0015386730341158692,
+      "min": 0.9883808095952025,
+      "max": 0.9941904047976011
+    },
+    "false_positive_rate": {
+      "mean": 0.017241379310344827,
+      "std": 0.017241379310344824,
+      "min": 0.0,
+      "max": 0.05172413793103448
+    },
+    "false_negative_rate": {
+      "mean": 0.10543478260869565,
+      "std": 0.03189434945895915,
+      "min": 0.05434782608695652,
+      "max": 0.16304347826086957
+    },
+    "average_latency_ms": {
+      "mean": 37.84067926637362,
+      "std": 2.1796161288556655,
+      "min": 35.75246866656622,
+      "max": 42.02218000214392
+    },
+    "median_latency_ms": {
+      "mean": 36.43166499823565,
+      "std": 1.4396436626893339,
+      "min": 35.11079998861533,
+      "max": 39.17060000821948
+    }
+  }
+}

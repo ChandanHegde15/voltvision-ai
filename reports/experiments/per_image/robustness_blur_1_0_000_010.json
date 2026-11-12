@@ -1,0 +1,76 @@
+{
+  "condition": "blur_1_0",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/bent_wire/000.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.6658252477645874,
+      "latency_ms": 178.37070001405664
+    },
+    {
+      "image_id": "test/bent_wire/001.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.6662603914737701,
+      "latency_ms": 37.193299998762086
+    },
+    {
+      "image_id": "test/bent_wire/002.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.7100290507078171,
+      "latency_ms": 39.92300000390969
+    },
+    {
+      "image_id": "test/bent_wire/003.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.6662456393241882,
+      "latency_ms": 41.49850000976585
+    },
+    {
+      "image_id": "test/bent_wire/004.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.9206448346376419,
+      "latency_ms": 37.40870000910945
+    },
+    {
+      "image_id": "test/bent_wire/005.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.7356099337339401,
+      "latency_ms": 39.214200020069256
+    },
+    {
+      "image_id": "test/bent_wire/006.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.7833104282617569,
+      "latency_ms": 34.82170001370832
+    },
+    {
+      "image_id": "test/bent_wire/007.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.7960886210203171,
+      "latency_ms": 35.62700000475161
+    },
+    {
+      "image_id": "test/bent_wire/008.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.6160304993391037,
+      "latency_ms": 35.04099999554455
+    },
+    {
+      "image_id": "test/bent_wire/009.png",
+      "category": "bent_wire",
+      "label": 1,
+      "score": 0.9096550047397614,
+      "latency_ms": 34.48570001637563
+    }
+  ]
+}

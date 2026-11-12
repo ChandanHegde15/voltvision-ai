@@ -1,0 +1,76 @@
+{
+  "condition": "brightness_1_2",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/cable_swap/007.png",
+      "category": "cable_swap",
+      "label": 1,
+      "score": 0.6427113711833954,
+      "latency_ms": 183.0809999955818
+    },
+    {
+      "image_id": "test/cable_swap/008.png",
+      "category": "cable_swap",
+      "label": 1,
+      "score": 0.6522322744131088,
+      "latency_ms": 31.42489999299869
+    },
+    {
+      "image_id": "test/cable_swap/009.png",
+      "category": "cable_swap",
+      "label": 1,
+      "score": 0.6189626157283783,
+      "latency_ms": 38.14260000945069
+    },
+    {
+      "image_id": "test/cable_swap/010.png",
+      "category": "cable_swap",
+      "label": 1,
+      "score": 0.6620716750621796,
+      "latency_ms": 38.803800009191036
+    },
+    {
+      "image_id": "test/cable_swap/011.png",
+      "category": "cable_swap",
+      "label": 1,
+      "score": 0.610141396522522,
+      "latency_ms": 38.062999985413626
+    },
+    {
+      "image_id": "test/combined/000.png",
+      "category": "combined",
+      "label": 1,
+      "score": 0.7435856759548187,
+      "latency_ms": 36.40499999164604
+    },
+    {
+      "image_id": "test/combined/001.png",
+      "category": "combined",
+      "label": 1,
+      "score": 0.8331083208322525,
+      "latency_ms": 38.54259999934584
+    },
+    {
+      "image_id": "test/combined/002.png",
+      "category": "combined",
+      "label": 1,
+      "score": 0.7620403617620468,
+      "latency_ms": 31.023899995489046
+    },
+    {
+      "image_id": "test/combined/003.png",
+      "category": "combined",
+      "label": 1,
+      "score": 0.6698049157857895,
+      "latency_ms": 36.34410002268851
+    },
+    {
+      "image_id": "test/combined/004.png",
+      "category": "combined",
+      "label": 1,
+      "score": 0.7755890935659409,
+      "latency_ms": 44.96410000137985
+    }
+  ]
+}

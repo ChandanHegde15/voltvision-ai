@@ -1,0 +1,76 @@
+{
+  "condition": "blur_1_0",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/poke_insulation/000.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.5789506733417511,
+      "latency_ms": 162.83230000408366
+    },
+    {
+      "image_id": "test/poke_insulation/001.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6985514461994171,
+      "latency_ms": 37.8830999834463
+    },
+    {
+      "image_id": "test/poke_insulation/002.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.5726377367973328,
+      "latency_ms": 36.113499983912334
+    },
+    {
+      "image_id": "test/poke_insulation/003.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6166045963764191,
+      "latency_ms": 34.56020000157878
+    },
+    {
+      "image_id": "test/poke_insulation/004.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6188203692436218,
+      "latency_ms": 32.359100005123764
+    },
+    {
+      "image_id": "test/poke_insulation/005.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6654584109783173,
+      "latency_ms": 35.04239997710101
+    },
+    {
+      "image_id": "test/poke_insulation/006.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.640336737036705,
+      "latency_ms": 33.83120000944473
+    },
+    {
+      "image_id": "test/poke_insulation/007.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6449418067932129,
+      "latency_ms": 33.11290001147427
+    },
+    {
+      "image_id": "test/poke_insulation/008.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6846640110015869,
+      "latency_ms": 32.07029998884536
+    },
+    {
+      "image_id": "test/poke_insulation/009.png",
+      "category": "poke_insulation",
+      "label": 1,
+      "score": 0.6359349936246872,
+      "latency_ms": 32.98600000562146
+    }
+  ]
+}

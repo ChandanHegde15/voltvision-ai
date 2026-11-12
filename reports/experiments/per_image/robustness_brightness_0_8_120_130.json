@@ -1,0 +1,76 @@
+{
+  "condition": "brightness_0_8",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/missing_cable/002.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.7497166991233826,
+      "latency_ms": 184.1320999956224
+    },
+    {
+      "image_id": "test/missing_cable/003.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.7394542098045349,
+      "latency_ms": 36.16250000777654
+    },
+    {
+      "image_id": "test/missing_cable/004.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.7234039753675461,
+      "latency_ms": 32.78400000999682
+    },
+    {
+      "image_id": "test/missing_cable/005.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.7690715491771698,
+      "latency_ms": 28.900399978738278
+    },
+    {
+      "image_id": "test/missing_cable/006.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.9115469008684158,
+      "latency_ms": 33.2918000058271
+    },
+    {
+      "image_id": "test/missing_cable/007.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.868780180811882,
+      "latency_ms": 36.17619999567978
+    },
+    {
+      "image_id": "test/missing_cable/008.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.8267385363578796,
+      "latency_ms": 32.27339999284595
+    },
+    {
+      "image_id": "test/missing_cable/009.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.8823481202125549,
+      "latency_ms": 33.22479999042116
+    },
+    {
+      "image_id": "test/missing_cable/010.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.8108651340007782,
+      "latency_ms": 30.636100011179224
+    },
+    {
+      "image_id": "test/missing_cable/011.png",
+      "category": "missing_cable",
+      "label": 1,
+      "score": 0.7890885472297668,
+      "latency_ms": 34.436299989465624
+    }
+  ]
+}

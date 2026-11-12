@@ -1,0 +1,76 @@
+{
+  "condition": "blur_0_5",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/combined/010.png",
+      "category": "combined",
+      "label": 1,
+      "score": 0.7750936597585678,
+      "latency_ms": 141.55240001855418
+    },
+    {
+      "image_id": "test/cut_inner_insulation/000.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6232040971517563,
+      "latency_ms": 28.64669999689795
+    },
+    {
+      "image_id": "test/cut_inner_insulation/001.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6777473539113998,
+      "latency_ms": 28.029699984472245
+    },
+    {
+      "image_id": "test/cut_inner_insulation/002.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6405959576368332,
+      "latency_ms": 28.438299981644377
+    },
+    {
+      "image_id": "test/cut_inner_insulation/003.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.73113813996315,
+      "latency_ms": 27.80239999992773
+    },
+    {
+      "image_id": "test/cut_inner_insulation/004.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.7574999779462814,
+      "latency_ms": 30.567299982067198
+    },
+    {
+      "image_id": "test/cut_inner_insulation/005.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6385559141635895,
+      "latency_ms": 42.60990000329912
+    },
+    {
+      "image_id": "test/cut_inner_insulation/006.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6427628844976425,
+      "latency_ms": 43.06590001215227
+    },
+    {
+      "image_id": "test/cut_inner_insulation/007.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6665072292089462,
+      "latency_ms": 37.68430001218803
+    },
+    {
+      "image_id": "test/cut_inner_insulation/008.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6875185519456863,
+      "latency_ms": 35.578399983933195
+    }
+  ]
+}

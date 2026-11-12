@@ -6,6 +6,8 @@ Deep Learning for Industrial Visual Anomaly Detection. This runnable educational
 
 An ImageNet-pretrained ResNet18 converts an image into local feature vectors. These spatial patch embeddings are compared against a bank made only from defect-free MVTec cable training images using Euclidean nearest-neighbor distance. The 95th-percentile local distance is the image anomaly score; a threshold selected from a separate normal validation split decides **NORMAL** or **REVIEW REQUIRED**.
 
+For explainable reference retrieval, VoltVision selects the normal source image (s) that minimizes \(S(s)=\frac{1}{N}\sum_{i=1}^{N}\min_{r\in R_s}\lVert q_i-r\rVert_2\), where \(q_i\) is a query patch and \(R_s\) is the set of retained reference patches from source image \(s\). This uses all query patches, rather than choosing an image because of one isolated nearest patch. Sources without retained patches are excluded during bank construction; exact ties use the stable relative image path.
+
 ```mermaid
 flowchart LR
  I[Cable image] --> R[ResNet18 layer3 patches]

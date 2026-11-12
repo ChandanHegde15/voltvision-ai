@@ -1,0 +1,76 @@
+{
+  "condition": "blur_1_0",
+  "threshold": 0.6180034255981446,
+  "rows": [
+    {
+      "image_id": "test/cut_inner_insulation/004.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.7542395144701004,
+      "latency_ms": 169.15090000838973
+    },
+    {
+      "image_id": "test/cut_inner_insulation/005.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6349702775478363,
+      "latency_ms": 36.26490000169724
+    },
+    {
+      "image_id": "test/cut_inner_insulation/006.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6396540552377701,
+      "latency_ms": 34.65729998424649
+    },
+    {
+      "image_id": "test/cut_inner_insulation/007.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6589181870222092,
+      "latency_ms": 31.296500004827976
+    },
+    {
+      "image_id": "test/cut_inner_insulation/008.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6904048323631287,
+      "latency_ms": 34.69070000573993
+    },
+    {
+      "image_id": "test/cut_inner_insulation/009.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.7483097016811371,
+      "latency_ms": 31.4572999777738
+    },
+    {
+      "image_id": "test/cut_inner_insulation/010.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6814494729042053,
+      "latency_ms": 36.482099996646866
+    },
+    {
+      "image_id": "test/cut_inner_insulation/011.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.7097129374742508,
+      "latency_ms": 33.86500000488013
+    },
+    {
+      "image_id": "test/cut_inner_insulation/012.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.7707843035459518,
+      "latency_ms": 34.142699994845316
+    },
+    {
+      "image_id": "test/cut_inner_insulation/013.png",
+      "category": "cut_inner_insulation",
+      "label": 1,
+      "score": 0.6605459004640579,
+      "latency_ms": 33.508799999253824
+    }
+  ]
+}

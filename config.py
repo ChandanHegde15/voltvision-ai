@@ -11,3 +11,12 @@ WEIGHTS_ID = "ResNet18_Weights.IMAGENET1K_V1"
 SEED = 42
 REFERENCE_CAP = 30000
 DEFAULT_THRESHOLD = 0.75
+ARTIFACT_FORMAT_VERSION = 2
+PREPROCESSING_CONFIG = {
+    "weights_transform": WEIGHTS_ID,
+    "resize_size": [256],
+    "crop_size": [224],
+    "interpolation": "bilinear",
+    "mean": [0.485, 0.456, 0.406],
+    "std": [0.229, 0.224, 0.225],
+}
