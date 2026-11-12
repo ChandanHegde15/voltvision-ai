@@ -1,8 +1,12 @@
 {
   "experiment_id": "exp_04_robustness_failure_analysis",
-  "created_at_utc": "2026-11-09T17:37:10.245381+00:00",
+  "created_at_utc": "2026-11-12T19:08:44.907555+00:00",
+  "protocol": "pre-registered exploratory comparison; test labels are used only for final reporting",
+  "latency_scope": "nearest-neighbor scoring only; feature extraction is precomputed and excluded",
   "changed_variable": "input quality condition",
+  "test_images": 150,
   "baseline_threshold": 0.6180034255981446,
+  "threshold_recalibrated": false,
   "runs": [
     {
       "condition": "identity",
@@ -147,218 +151,49 @@
   ],
   "per_category_original": {
     "bent_wire": {
-      "evaluated_images": 13,
-      "threshold": 0.6180034255981446,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "confusion_matrix": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          13
-        ]
-      ],
-      "average_latency_ms": 40.542469232325224,
-      "roc_auc": null,
-      "true_negatives": 0,
-      "false_positives": 0,
-      "false_negatives": 0,
-      "true_positives": 13,
-      "false_positive_rate": null,
-      "false_negative_rate": 0.0,
-      "median_latency_ms": 39.4596999976784
+      "images": 13,
+      "detected": 13,
+      "detection_rate": 1.0
     },
     "cable_swap": {
-      "evaluated_images": 12,
-      "threshold": 0.6180034255981446,
-      "precision": 1.0,
-      "recall": 0.5833333333333334,
-      "f1": 0.7368421052631579,
-      "confusion_matrix": [
-        [
-          0,
-          0
-        ],
-        [
-          5,
-          7
-        ]
-      ],
-      "average_latency_ms": 39.69480833620764,
-      "roc_auc": null,
-      "true_negatives": 0,
-      "false_positives": 0,
-      "false_negatives": 5,
-      "true_positives": 7,
-      "false_positive_rate": null,
-      "false_negative_rate": 0.4166666666666667,
-      "median_latency_ms": 38.81334999459796
+      "images": 12,
+      "detected": 7,
+      "detection_rate": 0.5833333333333334
     },
     "combined": {
-      "evaluated_images": 11,
-      "threshold": 0.6180034255981446,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "confusion_matrix": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          11
-        ]
-      ],
-      "average_latency_ms": 44.6929636421952,
-      "roc_auc": null,
-      "true_negatives": 0,
-      "false_positives": 0,
-      "false_negatives": 0,
-      "true_positives": 11,
-      "false_positive_rate": null,
-      "false_negative_rate": 0.0,
-      "median_latency_ms": 44.539199996506795
+      "images": 11,
+      "detected": 11,
+      "detection_rate": 1.0
     },
     "cut_inner_insulation": {
-      "evaluated_images": 14,
-      "threshold": 0.6180034255981446,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "confusion_matrix": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          14
-        ]
-      ],
-      "average_latency_ms": 45.9317214242349,
-      "roc_auc": null,
-      "true_negatives": 0,
-      "false_positives": 0,
-      "false_negatives": 0,
-      "true_positives": 14,
-      "false_positive_rate": null,
-      "false_negative_rate": 0.0,
-      "median_latency_ms": 43.893899986869656
+      "images": 14,
+      "detected": 14,
+      "detection_rate": 1.0
     },
     "cut_outer_insulation": {
-      "evaluated_images": 10,
-      "threshold": 0.6180034255981446,
-      "precision": 1.0,
-      "recall": 0.7,
-      "f1": 0.8235294117647058,
-      "confusion_matrix": [
-        [
-          0,
-          0
-        ],
-        [
-          3,
-          7
-        ]
-      ],
-      "average_latency_ms": 42.6921999984188,
-      "roc_auc": null,
-      "true_negatives": 0,
-      "false_positives": 0,
-      "false_negatives": 3,
-      "true_positives": 7,
-      "false_positive_rate": null,
-      "false_negative_rate": 0.3,
-      "median_latency_ms": 40.83714999433141
+      "images": 10,
+      "detected": 7,
+      "detection_rate": 0.7
     },
     "good": {
       "images": 58,
-      "normal_acceptance_rate": 1.0,
-      "false_positive_rate": 0.0,
-      "note": "Anomaly recall is undefined because this group contains no positive/anomalous labels."
+      "false_positives": 0,
+      "normal_acceptance_rate": 1.0
     },
     "missing_cable": {
-      "evaluated_images": 12,
-      "threshold": 0.6180034255981446,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "confusion_matrix": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          12
-        ]
-      ],
-      "average_latency_ms": 41.589325005285595,
-      "roc_auc": null,
-      "true_negatives": 0,
-      "false_positives": 0,
-      "false_negatives": 0,
-      "true_positives": 12,
-      "false_positive_rate": null,
-      "false_negative_rate": 0.0,
-      "median_latency_ms": 40.70165001030546
+      "images": 12,
+      "detected": 12,
+      "detection_rate": 1.0
     },
     "missing_wire": {
-      "evaluated_images": 10,
-      "threshold": 0.6180034255981446,
-      "precision": 1.0,
-      "recall": 0.5,
-      "f1": 0.6666666666666666,
-      "confusion_matrix": [
-        [
-          0,
-          0
-        ],
-        [
-          5,
-          5
-        ]
-      ],
-      "average_latency_ms": 39.94595999538433,
-      "roc_auc": null,
-      "true_negatives": 0,
-      "false_positives": 0,
-      "false_negatives": 5,
-      "true_positives": 5,
-      "false_positive_rate": null,
-      "false_negative_rate": 0.5,
-      "median_latency_ms": 39.373599996906705
+      "images": 10,
+      "detected": 5,
+      "detection_rate": 0.5
     },
     "poke_insulation": {
-      "evaluated_images": 10,
-      "threshold": 0.6180034255981446,
-      "precision": 1.0,
-      "recall": 0.7,
-      "f1": 0.8235294117647058,
-      "confusion_matrix": [
-        [
-          0,
-          0
-        ],
-        [
-          3,
-          7
-        ]
-      ],
-      "average_latency_ms": 37.586459997692145,
-      "roc_auc": null,
-      "true_negatives": 0,
-      "false_positives": 0,
-      "false_negatives": 3,
-      "true_positives": 7,
-      "false_positive_rate": null,
-      "false_negative_rate": 0.3,
-      "median_latency_ms": 36.52264998527244
+      "images": 10,
+      "detected": 7,
+      "detection_rate": 0.7
     }
   },
   "false_negatives_original": [

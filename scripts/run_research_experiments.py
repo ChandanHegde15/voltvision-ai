@@ -14,7 +14,7 @@ from src.artifacts import image_id, image_manifest, load_reference_artifacts, ma
 from src.data_loader import image_files, normal_training_images, test_label
 from src.perturbations import CONDITIONS, condition_features
 from src.feature_extractor import FeatureExtractor
-from src.research_experiments import aggregate_numeric_runs, build_bank, deterministic_split, report_metrics, score_embeddings
+from src.research_experiments import PROTOCOL, SCORING_LATENCY_SCOPE, aggregate_numeric_runs, build_bank, deterministic_split, exp04_payload, false_negative_rows, per_category_detection, report_metrics, score_embeddings
 
 EXPERIMENTS_DIR = REPORTS_DIR / "experiments"
 SPLIT_SEEDS = list(range(10))
@@ -47,7 +47,7 @@ def run() -> None:
     features = extract_features(extractor, sorted(set(normal_paths + test_paths)))
     test_features = [features[path] for path in test_paths]
     validation_features = [features[path] for path in validation_paths]
-    common = {"created_at_utc": started, "protocol": "pre-registered exploratory comparison; test labels are used only for final reporting", "test_images": len(test_paths), "normal_train_images": len(normal_paths), "baseline_split_seed": BASELINE_SEED, "latency_scope": "nearest-neighbor scoring only; feature extraction is precomputed and excluded"}
+    common = {"created_at_utc": started, "protocol": PROTOCOL, "test_images": len(test_paths), "normal_train_images": len(normal_paths), "baseline_split_seed": BASELINE_SEED, "latency_scope": SCORING_LATENCY_SCOPE}
 
     # Experiment 1: reference-bank size, using one nested deterministic order.
     flat = np.vstack([features[path] for path in reference_paths]); order = np.random.default_rng(2027).permutation(len(flat)); bank_runs = []
@@ -82,12 +82,11 @@ def run() -> None:
         condition_features = transformed_features(extractor, test_paths, condition, features); scores, latencies = score_embeddings(model, [condition_features[path] for path in test_paths]); metrics = report_metrics(labels, scores, baseline_threshold, latencies)
         robustness.append({"condition": condition, "threshold_recalibrated": False, **metrics})
         if condition == "identity":
-            per_category = {}
-            for category in sorted(set(categories)):
-                indexes = [index for index, item in enumerate(categories) if item == category]; local_labels = [labels[index] for index in indexes]; local_scores = [scores[index] for index in indexes]
-                per_category[category] = report_metrics(local_labels, local_scores, baseline_threshold, [latencies[index] for index in indexes])
-            false_negatives = [{"image_id": ids([test_paths[index]])[0], "category": categories[index], "score": scores[index], "margin_to_threshold": baseline_threshold - scores[index]} for index, label in enumerate(labels) if label == 1 and scores[index] < baseline_threshold]
-    save("exp_04_robustness_failure_analysis.json", {**common, "experiment_id": "exp_04_robustness_failure_analysis", "changed_variable": "input quality condition", "baseline_threshold": baseline_threshold, "runs": robustness, "per_category_original": per_category, "false_negatives_original": false_negatives, "limitations": "Synthetic conditions are not a substitute for real production camera and lighting variation."})
+            per_category = per_category_detection(categories, labels, scores, baseline_threshold)
+            identity_rows = [{"image_id": image_id_, "category": category, "label": label, "score": score} for image_id_, category, label, score in zip(ids(test_paths), categories, labels, scores)]
+            false_negatives = false_negative_rows(identity_rows, baseline_threshold)
+    extra = {"normal_train_images": len(normal_paths), "baseline_split_seed": BASELINE_SEED}
+    save("exp_04_robustness_failure_analysis.json", exp04_payload(created_at_utc=started, baseline_threshold=baseline_threshold, runs=robustness, per_category=per_category, false_negatives=false_negatives, test_images=len(test_paths), extra=extra))
     print(json.dumps({"completed_at_utc": now(), "outputs": [str(EXPERIMENTS_DIR / name) for name in ("exp_01_reference_bank_size.json", "exp_02_score_aggregation.json", "exp_03_split_stability.json", "exp_04_robustness_failure_analysis.json")]}, indent=2))
 
 if __name__ == "__main__": run()
