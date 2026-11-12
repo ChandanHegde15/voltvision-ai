@@ -7,9 +7,9 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from config import REPORTS_DIR
+from src.perturbations import CONDITIONS
 from src.research_experiments import report_metrics
 
-CONDITIONS = ("identity", "blur_0_5", "blur_1_0", "brightness_0_8", "brightness_1_2")
 ROOT = REPORTS_DIR / "experiments"; CHUNKS = ROOT / "per_image"; OUTPUT = ROOT / "exp_04_robustness_failure_analysis.json"
 
 def main() -> None:

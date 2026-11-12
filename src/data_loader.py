@@ -31,5 +31,10 @@ def inspect_dataset(root: Path) -> dict:
             "missing": [str(p) for p in expected if not p.exists()], "invalid": invalid,
             "ready": bool(train) and bool(tests) and not invalid}
 
+def test_label(path: Path) -> int:
+    """MVTec test label from the category folder: 0 for good, 1 for any defect."""
+    return 0 if Path(path).parent.name == "good" else 1
+test_label.__test__ = False  # not a pytest test despite the name
+
 def normal_training_images(root: Path) -> list[Path]:
     return [p for p in image_files(Path(root) / "train" / "good") if validate_image(p)]

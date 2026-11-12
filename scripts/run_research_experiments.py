@@ -1,19 +1,18 @@
 """Run the four pre-registered CPU research experiments without touching baseline artifacts."""
 from __future__ import annotations
-import io
 import json
 from datetime import datetime, timezone
 from pathlib import Path
 import sys
 import time
 import numpy as np
-from PIL import Image, ImageEnhance, ImageFilter
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from config import DATA_DIR, REPORTS_DIR
 from src.anomaly_detector import PatchAnomalyDetector, choose_threshold
 from src.artifacts import image_id, image_manifest, load_reference_artifacts, manifest_hash
-from src.data_loader import image_files, normal_training_images
+from src.data_loader import image_files, normal_training_images, test_label
+from src.perturbations import CONDITIONS, condition_features
 from src.feature_extractor import FeatureExtractor
 from src.research_experiments import aggregate_numeric_runs, build_bank, deterministic_split, report_metrics, score_embeddings
 
@@ -37,23 +36,12 @@ def extract_features(extractor: FeatureExtractor, paths: list[Path]) -> dict[Pat
 
 def transformed_features(extractor: FeatureExtractor, paths: list[Path], condition: str, original: dict[Path, np.ndarray]) -> dict[Path, np.ndarray]:
     if condition == "identity": return original
-    output: dict[Path, np.ndarray] = {}
-    for path in paths:
-        with Image.open(path) as source:
-            image = source.convert("RGB")
-        if condition == "blur_0_5": image = image.filter(ImageFilter.GaussianBlur(radius=0.5))
-        elif condition == "blur_1_0": image = image.filter(ImageFilter.GaussianBlur(radius=1.0))
-        elif condition == "brightness_0_8": image = ImageEnhance.Brightness(image).enhance(0.8)
-        elif condition == "brightness_1_2": image = ImageEnhance.Brightness(image).enhance(1.2)
-        else: raise ValueError(f"Unknown condition: {condition}")
-        stream = io.BytesIO(); image.save(stream, format="PNG"); stream.seek(0)
-        output[path] = extractor.extract(stream)[0]
-    return output
+    return {path: condition_features(extractor, path, condition) for path in paths}
 
 def run() -> None:
     started = now(); extractor = FeatureExtractor()
     normal_paths = normal_training_images(DATA_DIR); test_paths = image_files(DATA_DIR / "test")
-    labels = [0 if path.parent.name == "good" else 1 for path in test_paths]
+    labels = [test_label(path) for path in test_paths]
     categories = [path.parent.name for path in test_paths]
     reference_paths, validation_paths, _ = deterministic_split(normal_paths, BASELINE_SEED)
     features = extract_features(extractor, sorted(set(normal_paths + test_paths)))
@@ -89,8 +77,8 @@ def run() -> None:
     save("exp_03_split_stability.json", {**common, "experiment_id": "exp_03_split_stability", "changed_variable": "deterministic normal train/validation split seed", "seeds": SPLIT_SEEDS, "runs": split_runs, "aggregate": aggregate_numeric_runs(split_runs, numeric)})
 
     # Experiment 4: frozen baseline failure and single-factor input-condition study.
-    baseline_threshold = baseline_metadata["threshold"]; model = detector(baseline_bank); conditions = ["identity", "blur_0_5", "blur_1_0", "brightness_0_8", "brightness_1_2"]; robustness = []
-    for condition in conditions:
+    baseline_threshold = baseline_metadata["threshold"]; model = detector(baseline_bank); robustness = []
+    for condition in CONDITIONS:
         condition_features = transformed_features(extractor, test_paths, condition, features); scores, latencies = score_embeddings(model, [condition_features[path] for path in test_paths]); metrics = report_metrics(labels, scores, baseline_threshold, latencies)
         robustness.append({"condition": condition, "threshold_recalibrated": False, **metrics})
         if condition == "identity":

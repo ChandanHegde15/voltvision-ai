@@ -7,12 +7,13 @@ from src.data_loader import normal_training_images
 from src.feature_extractor import FeatureExtractor
 from src.anomaly_detector import PatchAnomalyDetector, choose_threshold
 from src.artifacts import image_id, image_manifest, make_metadata
+from src.research_experiments import deterministic_split
 
 def main():
     paths = normal_training_images(DATA_DIR)
     if len(paths) < 4: raise SystemExit(f"Need at least 4 readable train/good images at {DATA_DIR}; found {len(paths)}.")
-    rng=np.random.default_rng(SEED); ids=rng.permutation(len(paths)); cut=max(1,round(len(paths)*.2)); validation={int(i) for i in ids[:cut]}
-    ref=[p for i,p in enumerate(paths) if i not in validation]; val=[p for i,p in enumerate(paths) if i in validation]
+    # Same seeded 80/20 split as the experiments; the returned RNG continues into patch sampling.
+    ref, val, rng = deterministic_split(paths, SEED)
     ex=FeatureExtractor(); chunks=[]; owners=[]
     for p in ref:
         x,_=ex.extract(p); chunks.append(x); owners.extend([image_id(p, DATA_DIR)]*len(x))
