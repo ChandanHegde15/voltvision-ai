@@ -1,6 +1,6 @@
 from __future__ import annotations
 from pathlib import Path
-import json, time
+import json
 import numpy as np
 from sklearn.metrics import precision_recall_fscore_support, roc_auc_score, confusion_matrix
 

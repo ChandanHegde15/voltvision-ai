@@ -1,5 +1,4 @@
 import time
-from pathlib import Path
 import matplotlib.pyplot as plt
 import streamlit as st
 
@@ -37,10 +36,10 @@ with tab_inspect:
     upload = st.file_uploader("Cable image", type=["png", "jpg", "jpeg", "bmp", "tif", "tiff"], label_visibility="collapsed")
     if upload:
         left, right = st.columns([1.05, 1])
-        with left: st.image(upload, caption=upload.name, use_container_width=True)
+        with left: st.image(upload, caption=upload.name, width="stretch")
         with right:
             st.write("Ready for inspection")
-            if st.button("Inspect image", type="primary", use_container_width=True):
+            if st.button("Inspect image", type="primary", width="stretch"):
                 try:
                     extractor, detector, metadata = load_engine()
                     started = time.perf_counter(); patches, _ = extractor.extract(upload); result = detector.score(patches); latency = (time.perf_counter() - started) * 1000
@@ -59,11 +58,11 @@ with tab_inspect:
         with evidence:
             fig, ax = plt.subplots(figsize=(5, 3.8)); fig.patch.set_facecolor("#191f2a"); ax.set_facecolor("#191f2a")
             heatmap = ax.imshow(result.heatmap, cmap="magma"); ax.set_title("Areas needing attention", color="white"); ax.set_axis_off(); fig.colorbar(heatmap, ax=ax, label="difference")
-            st.pyplot(fig, use_container_width=True)
+            st.pyplot(fig, width="stretch")
         with reference:
             st.write("Closest known-normal example")
             reference_path = DATA_DIR / result.closest_reference
-            if reference_path.is_file(): st.image(reference_path, use_container_width=True)
+            if reference_path.is_file(): st.image(reference_path, width="stretch")
             else: st.caption("A saved normal reference image is not available.")
 
 with tab_history:
@@ -76,5 +75,5 @@ with tab_history:
         recent = events.sort_values("timestamp_utc", ascending=False).head(20).copy()
         recent["timestamp_utc"] = recent["timestamp_utc"].str.replace("T", " ").str.replace("+00:00", " UTC")
         recent = recent.rename(columns={"timestamp_utc":"Time", "image_filename":"Image", "anomaly_score":"Score", "decision":"Result", "latency_ms":"Time (ms)"})
-        st.dataframe(recent[["Time", "Image", "Score", "Result", "Time (ms)"]], use_container_width=True, hide_index=True)
+        st.dataframe(recent[["Time", "Image", "Score", "Result", "Time (ms)"]], width="stretch", hide_index=True)
     else: st.info("No inspections recorded yet.")
