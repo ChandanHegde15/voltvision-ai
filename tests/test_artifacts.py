@@ -39,3 +39,16 @@ def test_missing_and_invalid_metadata_are_rejected(tmp_path):
     (artifacts / "metadata.json").write_text(json.dumps(metadata))
     with pytest.raises(RuntimeError, match="configuration mismatch"):
         load_reference_artifacts(artifacts, dataset)
+
+def test_relocated_dataset_with_identical_content_still_loads(tmp_path):
+    import shutil
+    artifacts, dataset, _ = artifact_fixture(tmp_path / "original")
+    moved = tmp_path / "elsewhere" / "cable"; shutil.copytree(dataset, moved)
+    patches, paths, _ = load_reference_artifacts(artifacts, moved)
+    assert patches.shape == (2, 256) and paths == ["train/good/001.png"] * 2
+
+def test_changed_dataset_content_is_rejected(tmp_path):
+    artifacts, dataset, _ = artifact_fixture(tmp_path)
+    Image.new("RGB", (8, 8), "red").save(dataset / "train" / "good" / "001.png")
+    with pytest.raises(RuntimeError, match="dataset fingerprint mismatch"):
+        load_reference_artifacts(artifacts, dataset)

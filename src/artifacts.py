@@ -46,7 +46,9 @@ def _incompatible(detail: str) -> RuntimeError:
 def validate_metadata(metadata: dict, dataset_root: Path = DATA_DIR) -> None:
     missing = sorted(REQUIRED_METADATA - metadata.keys())
     if missing: raise _incompatible("missing metadata: " + ", ".join(missing))
-    expected = {"artifact_format_version": ARTIFACT_FORMAT_VERSION, "seed": SEED, "reference_patch_cap": REFERENCE_CAP, "architecture": "resnet18", "weights": WEIGHTS_ID, "image_size": IMAGE_SIZE, "feature_layer": FEATURE_LAYER, "preprocessing": PREPROCESSING_CONFIG, "metric": "euclidean", "dataset_path": str(Path(dataset_root).resolve())}
+    # dataset_path is informational only: dataset identity is proven by the content
+    # fingerprint and manifests below, so a moved or cloned repository stays valid.
+    expected = {"artifact_format_version": ARTIFACT_FORMAT_VERSION, "seed": SEED, "reference_patch_cap": REFERENCE_CAP, "architecture": "resnet18", "weights": WEIGHTS_ID, "image_size": IMAGE_SIZE, "feature_layer": FEATURE_LAYER, "preprocessing": PREPROCESSING_CONFIG, "metric": "euclidean"}
     mismatch = [key for key, value in expected.items() if metadata.get(key) != value]
     if mismatch: raise _incompatible("configuration mismatch: " + ", ".join(mismatch))
     for name in ("reference_image_manifest", "validation_image_manifest"):
