@@ -28,3 +28,15 @@ def test_closest_normal_uses_aggregate_image_similarity_not_one_patch():
     closest, aggregate_score, _ = detector.closest_reference_image(np.array([[0., 0.], [1., 0.]], dtype=np.float32))
     assert closest == "B.png"
     assert aggregate_score < .5
+
+def test_closest_reference_exact_tie_resolves_to_smaller_source_id():
+    patches = np.array([[1., 0.], [-1., 0.]], dtype=np.float32)
+    detector = PatchAnomalyDetector(.5).fit(patches, ["b.png", "a.png"])
+    closest, score, index = detector.closest_reference_image(np.zeros((3, 2), dtype=np.float32))
+    assert closest == "a.png" and np.isclose(score, 1.) and index == 1
+
+def test_score_and_anomaly_score_agree_at_95th_percentile():
+    rng = np.random.default_rng(0); bank = rng.normal(size=(50, 8)).astype(np.float32); query = rng.normal(size=(196, 8)).astype(np.float32)
+    detector = PatchAnomalyDetector(.5).fit(bank, [f"{i % 5}.png" for i in range(50)])
+    assert np.isclose(detector.score(query).score, detector.anomaly_score(query, 95.0))
+    assert detector.score(query).heatmap.shape == (14, 14)

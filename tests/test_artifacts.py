@@ -52,3 +52,15 @@ def test_changed_dataset_content_is_rejected(tmp_path):
     Image.new("RGB", (8, 8), "red").save(dataset / "train" / "good" / "001.png")
     with pytest.raises(RuntimeError, match="dataset fingerprint mismatch"):
         load_reference_artifacts(artifacts, dataset)
+
+def test_non_finite_patch_array_is_rejected(tmp_path):
+    artifacts, dataset, _ = artifact_fixture(tmp_path)
+    bad = np.zeros((2, 256), dtype=np.float32); bad[0, 0] = np.nan; np.save(artifacts / "reference_patches.npy", bad)
+    with pytest.raises(RuntimeError, match="invalid reference patch array"):
+        load_reference_artifacts(artifacts, dataset)
+
+def test_ownership_mapping_to_unknown_image_is_rejected(tmp_path):
+    artifacts, dataset, _ = artifact_fixture(tmp_path)
+    (artifacts / "reference_paths.json").write_text(json.dumps(["train/good/001.png", "train/good/002.png"]))  # 002 is a validation image
+    with pytest.raises(RuntimeError, match="ownership mapping"):
+        load_reference_artifacts(artifacts, dataset)
