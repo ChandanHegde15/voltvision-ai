@@ -1,6 +1,6 @@
 # VoltVision AI — Implementation Plan
 
-Status: **awaiting approval**. This plan is based on the findings in `PROJECT_STATUS.md` (F-numbers below refer to those findings).
+Status: **approved ("approve all") and implemented on 2026-11-13.** Outcomes and deviations are recorded in `PROJECT_STATUS.md` §7. This plan is based on the findings in `PROJECT_STATUS.md` (F-numbers below refer to those findings).
 
 ## Ground rules for every item
 
@@ -218,10 +218,10 @@ Hashing the whole dataset on each load takes about 2 s. A cache keyed on file si
 
 Please confirm each item, or reply "approve all":
 
-- [ ] 0. Commit the current working tree as-is.
-- [ ] P1. Rewrite history and **force-push** to `origin/main`.
-- [ ] P2 to P4. Hygiene, portability and cleanup.
-- [ ] P5. Includes a read-only temporary rebuild of the bank for the equivalence check (about 1 min CPU).
-- [ ] P6. Re-aggregate Exp 4 (no model run). The candidate replaces the original after the check.
-- [ ] P7. Optional evaluation re-run into a temporary path.
-- [ ] P8 to P10. Tests, lock file and documentation.
+- [x] 0. Commit the current working tree as-is.
+- [x] P1. Rewrite history and **force-push** to `origin/main`.
+- [x] P2 to P4. Hygiene, portability and cleanup.
+- [x] P5. Includes a read-only temporary rebuild of the bank for the equivalence check (about 1 min CPU).
+- [x] P6. Re-aggregate Exp 4 (no model run). The candidate replaces the original after the check.
+- [x] P7. Optional evaluation re-run into a temporary path.
+- [x] P8 to P10. Tests, lock file and documentation.
