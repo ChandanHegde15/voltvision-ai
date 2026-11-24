@@ -7,4 +7,9 @@ streamlit>=1.30
 torch>=2.2
 torchvision>=0.17
 pytest>=8.0
+# REST API (see requirements-api.txt for the runtime-only list); httpx is the API test client.
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+httpx>=0.27
 huggingface_hub>=0.20

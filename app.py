@@ -1,12 +1,9 @@
-import time
 import matplotlib.pyplot as plt
 import streamlit as st
 
 from config import DATA_DIR, EVENTS_PATH
-from src.anomaly_detector import PatchAnomalyDetector
-from src.artifacts import load_reference_artifacts
 from src.edge_simulator import append_event, load_events
-from src.feature_extractor import FeatureExtractor
+from src.inspection_service import InspectionEngine
 
 st.set_page_config(page_title="VoltVision", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
 st.markdown("""<style>
@@ -20,11 +17,9 @@ div.stButton > button { background:#4f7cff; color:white; border:0; border-radius
 div.stButton > button:hover { background:#6990ff; color:white; }</style>""", unsafe_allow_html=True)
 
 @st.cache_resource
-def load_engine():
+def load_engine() -> InspectionEngine:
     """Loads only when an inspection is requested."""
-    bank, paths, metadata = load_reference_artifacts()
-    detector = PatchAnomalyDetector(metadata["threshold"]).fit(bank, paths)
-    return FeatureExtractor(), detector, metadata
+    return InspectionEngine().load()
 
 st.markdown('<div class="brand">⚡ VoltVision</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtle">Cable visual inspection</div>', unsafe_allow_html=True)
@@ -41,10 +36,9 @@ with tab_inspect:
             st.write("Ready for inspection")
             if st.button("Inspect image", type="primary", width="stretch"):
                 try:
-                    extractor, detector, metadata = load_engine()
-                    started = time.perf_counter(); patches, _ = extractor.extract(upload); result = detector.score(patches); latency = (time.perf_counter() - started) * 1000
-                    append_event(EVENTS_PATH, "LINE-01", upload.name, result.score, result.decision, latency)
-                    st.session_state["inspection"] = (result, metadata, latency)
+                    outcome = load_engine().inspect(upload)
+                    append_event(EVENTS_PATH, "LINE-01", upload.name, outcome.result.score, outcome.result.decision, outcome.latency_ms)
+                    st.session_state["inspection"] = (outcome.result, outcome.metadata, outcome.latency_ms)
                 except Exception as exc:
                     st.error(f"Inspection is not ready: {exc}")
     inspection = st.session_state.get("inspection")
