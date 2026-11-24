@@ -50,7 +50,7 @@ jobs:
 
       # The ImageNet ResNet18 weights are downloaded once and reused across runs.
       - name: Cache pretrained weights
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/torch
           key: torch-weights-resnet18-v1
