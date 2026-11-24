@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+.pytest-tmp
+.pytest_cache
+__pycache__
+*.pyc
+# Never bake the dataset, the reference bank or results into an image.
+data
+artifacts
+reports
+tests
+docs
+*.md

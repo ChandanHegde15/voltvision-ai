@@ -59,3 +59,23 @@ jobs:
       # is never downloaded, cached or uploaded by CI.
       - name: Run tests
         run: python -m pytest -q
+
+  docker:
+    name: Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t voltvision-api .
+      # No dataset or artifacts are mounted, so liveness must work and
+      # readiness must report 503 (not crash) - the same "demo mode" contract
+      # as the Streamlit app.
+      - name: Smoke test the container
+        run: |
+          docker run -d --name vv -p 8000:8000 voltvision-api
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:8000/health && break; sleep 2; done
+          curl -sf http://127.0.0.1:8000/health
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8000/ready)" = "503"
+      - name: Show container logs on failure
+        if: failure()
+        run: docker logs vv

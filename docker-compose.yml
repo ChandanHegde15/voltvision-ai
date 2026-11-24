@@ -1,0 +1,15 @@
+# Serves the REST API on http://localhost:8000 (docs at /docs).
+# Build the reference bank on the host first (scripts/build_reference_bank.py);
+# data/ and artifacts/ are mounted, never copied into the image.
+services:
+  api:
+    build: .
+    image: voltvision-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/mvtec_anomaly_detection:/app/data/mvtec_anomaly_detection:ro
+      - ./artifacts:/app/artifacts
+    environment:
+      VOLTVISION_MAX_UPLOAD_MB: "10"
+    restart: unless-stopped
