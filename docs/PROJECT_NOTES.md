@@ -22,7 +22,7 @@ The method uses transfer learning: ResNet18 is pretrained on ImageNet, so no CNN
 
 ## Implemented vs future work
 
-Implemented: normal-only patch nearest-neighbour design, deterministic threshold procedure, content-verified reference artifacts, MVTec-compatible scripts, metrics with provenance, four research experiments, a local CSV event log, a Streamlit UI, and a demo-mode fallback. Current results, including how much they vary across data splits, are in the [README](../README.md#results) and [EXPERIMENTS.md](EXPERIMENTS.md). They come from a small single-category benchmark and are not a production claim.
+Implemented: normal-only patch nearest-neighbour design, deterministic threshold procedure, content-verified reference artifacts, MVTec-compatible scripts, metrics with provenance, four research experiments, a local CSV event log, a Streamlit UI, a FastAPI REST API over a shared inspection service, Docker packaging, CI (tests, lint, container smoke test), and a demo-mode fallback. Current results, including how much they vary across data splits, are in the [README](../README.md#results) and [EXPERIMENTS.md](EXPERIMENTS.md). They come from a small single-category benchmark and are not a production claim.
 
 Future work: calibration on representative production imagery, controlled camera and lighting, drift monitoring, integration with inspection hardware, faster closest-reference retrieval, pixel-level evaluation against the ground-truth masks, and integration with electrical testing.
 

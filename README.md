@@ -48,7 +48,31 @@ If data/artifacts are absent, `streamlit run app.py` still starts in explicitly 
 
 Reference artifacts are validated against the dataset's content (SHA-256 manifests and a dataset fingerprint), not its location, so a cloned or moved repository with identical data keeps working. Changing the model or preprocessing settings in `config.py` requires rebuilding the bank.
 
-Run the tests with `pytest` (configured in `pytest.ini`). GitHub Actions runs the same tests on Python 3.10 and 3.13, plus a lint check, on every push and pull request. CI never downloads the dataset; the tests use temporary files only.
+Run the tests with `pytest` (configured in `pytest.ini`). GitHub Actions runs the same tests on Python 3.10 and 3.13, a lint check, and a Docker build with a container smoke test on every push and pull request. CI never downloads the dataset; the tests use temporary files only.
+
+## REST API and Docker
+
+The same inspection engine used by the Streamlit app is also exposed over HTTP (FastAPI). It needs the dataset and the reference bank from the steps above:
+
+```powershell
+.\.venv\Scripts\python.exe -m uvicorn api.main:app --port 8000
+# interactive docs: http://127.0.0.1:8000/docs
+curl.exe -F "image=@data\mvtec_anomaly_detection\cable\test\good\000.png" http://127.0.0.1:8000/inspect
+```
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /health` | Liveness (loads nothing) |
+| `GET /ready` | 200 when the reference bank loads and validates, otherwise 503 with a rebuild hint |
+| `POST /inspect` | Multipart field `image`; returns decision, score, threshold, latency, 14x14 heatmap and the closest normal reference |
+
+Docker: the image holds code and the public ImageNet weights only. The dataset (CC BY-NC-SA 4.0) and the reference bank are mounted, never copied in.
+
+```powershell
+docker compose up --build   # serves http://localhost:8000
+```
+
+Run a single worker, and add authentication or a trusted network before exposing it. Design details: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Dataset and limits
 
