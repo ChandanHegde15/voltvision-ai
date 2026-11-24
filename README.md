@@ -1,5 +1,7 @@
 # VoltVision AI
 
+[![CI](https://github.com/ChandanHegde15/voltvision-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/ChandanHegde15/voltvision-ai/actions/workflows/ci.yml)
+
 Deep Learning for Industrial Visual Anomaly Detection. This runnable educational prototype demonstrates a normal-only visual-inspection workflow for electrical cables. It is an independent project, uses only the public MVTec AD dataset, and is not deployed in production.
 
 ## What it does
@@ -46,7 +48,7 @@ If data/artifacts are absent, `streamlit run app.py` still starts in explicitly 
 
 Reference artifacts are validated against the dataset's content (SHA-256 manifests and a dataset fingerprint), not its location, so a cloned or moved repository with identical data keeps working. Changing the model or preprocessing settings in `config.py` requires rebuilding the bank.
 
-Run the tests with `pytest` (configured in `pytest.ini`).
+Run the tests with `pytest` (configured in `pytest.ini`). GitHub Actions runs the same tests on Python 3.10 and 3.13, plus a lint check, on every push and pull request. CI never downloads the dataset; the tests use temporary files only.
 
 ## Dataset and limits
 

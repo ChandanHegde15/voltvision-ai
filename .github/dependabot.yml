@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Keeps the CI workflow's actions up to date. Python packages are not
+  # managed here: requirements-lock.txt records the exact environment behind
+  # the reported results and must only change with a deliberate re-run.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
